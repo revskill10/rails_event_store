@@ -24,6 +24,28 @@ module RailsEventStore
     end
   end
 
+  module AsyncIdOnlyHandler
+    def self.with_defaults
+      Module.new do
+        def self.prepended(host_class)
+          host_class.prepend AsyncHandler.with
+        end
+      end
+    end
+
+    def self.with(event_store: Rails.configuration.event_store)
+      Module.new do
+        define_method :perform do |payload|
+          super(event_store.read.event(payload.symbolize_keys.fetch(:event_id)))
+        end
+      end
+    end
+
+    def self.prepended(host_class)
+      host_class.prepend with_defaults
+    end
+  end
+
   module CorrelatedHandler
     def perform(event)
       Rails
