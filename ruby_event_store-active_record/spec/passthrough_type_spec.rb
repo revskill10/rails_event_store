@@ -2,6 +2,7 @@
 
 require "spec_helper"
 require "ruby_event_store"
+require "ruby_event_store/spec/event_repository_lint"
 
 module RubyEventStore
   module ActiveRecord
