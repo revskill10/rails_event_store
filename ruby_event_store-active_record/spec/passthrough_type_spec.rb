@@ -32,6 +32,6 @@ module RubyEventStore
           ::ActiveRecord::Base.connection.execute("SELECT data ->> 'foo' as foo FROM event_store_events").first["foo"]
         ).to eq("bar")
       end
-    end
+    end if ENV["DATABASE_URL"].include?("postgres")
   end
 end
