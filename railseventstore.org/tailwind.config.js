@@ -1,8 +1,7 @@
 module.exports = {
   content: [
     "./source/**/*.{html,md,erb}",
-    "./layouts/**/*.erb",
-    "./partials/**/*.erb",
+    "./helpers/*.rb",
     "./config.rb",
   ],
   theme: {
