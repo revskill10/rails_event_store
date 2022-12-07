@@ -17,7 +17,7 @@ module DocumentationHelper
     link_to gem, "https://www.rubydoc.info/gems/#{gem}"
   end
 
-  def edit_github_link
+  def edit_github_link(css_classes)
     link_to "Edit this page on GitHub",
             File.join(github_url, "blob/master/railseventstore.org", current_source_file),
             class: css_classes
