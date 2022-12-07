@@ -9,9 +9,9 @@
         <div class="bg-white relative pointer-events-auto" id="search"></div>
       </div>
 
-      <nav class="sticky top-[12rem] -ml-0.5 h-[calc(100vh-12rem)] overflow-y-auto overflow-x-hidden pb-16 pl-0.5">
+      <div class="sticky top-[12rem] -ml-0.5 h-[calc(100vh-12rem)] overflow-y-auto overflow-x-hidden pb-16 pl-0.5">
         <%= partial "partials/documentation_nav_#{version}" %>
-      </nav>
+      </div>
     </aside>
 
     <div class="min-w-0 max-w-2xl flex-auto px-4 py-16 lg:max-w-none lg:pr-0 lg:pl-8 xl:px-16">
@@ -27,8 +27,8 @@
       </article>
 
       <footer class="text-sm leading-6 mt-12">
-        <div class="pt-10 pb-28 border-t border-slate-200 sm:flex justify-end text-slate-500">
-          <%= edit_github_link %>
+        <div class="pt-10 pb-18 border-t border-slate-200 sm:flex justify-end text-slate-500">
+          <%= edit_github_link(%w[bg-none font-normal text-slate-500]) %>
         </div>
       </footer>
     </div>
